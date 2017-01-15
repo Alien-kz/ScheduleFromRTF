@@ -18,7 +18,7 @@ class lesson():
     def __lt__(self, other):
         return self.datetime < other.datetime
 
-program = os.path.basename(sys.argv[0]).decode("cp1251")
+program = os.path.basename(sys.argv[0]).decode(locale.getpreferredencoding())
 teacher = program[0:-3]
 #teacher = u"Баев"
 print teacher
@@ -145,7 +145,7 @@ for i in range(7):
                    theLesson.group + "\t" + \
                    theLesson.room + "\t" + \
                    theLesson.subject
-            f.write(text.encode("cp1251") + "\n")
+            f.write(text.encode(locale.getpreferredencoding()) + "\n")
             print text
     print
     f.write('\n')
